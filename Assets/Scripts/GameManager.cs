@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
     public int checkPointsGot;
     public int checkPointToFinish;
     public GameObject player;
-    public UIManager uiManager;
+    public UIGameManager uiManager;
+    public Stage stage;
+    public GameObject levelStage;
 
 
     public Exit exit;
@@ -21,13 +23,19 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        PrepareGame(levelIndex);
-        exit = FindObjectOfType<Exit>();
+        stage = FindObjectOfType<Stage>();
+      
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        stage.gameObject.SetActive(true);
+        stage.PrepareStage();
+        exit = FindObjectOfType<Exit>();
+        levelStage = GameObject.FindGameObjectWithTag("STAGE");
+
         checkPointsGot = 0;
         
     }
@@ -45,7 +53,6 @@ public class GameManager : MonoBehaviour
     {
         exit.OpenDoor();
 
-     //   ExitLevel();
 
 
     }
@@ -54,6 +61,7 @@ public class GameManager : MonoBehaviour
     {
         LeanTween.scale(player, Vector3.zero, 1f);
         LeanTween.rotateAround(player, Vector3.up, 360f, 1f);
+        Destroy(levelStage, 2f);
     }
 
     public void PrepareGame(int levelIndex)

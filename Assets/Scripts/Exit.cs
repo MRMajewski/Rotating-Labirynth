@@ -5,7 +5,7 @@ using UnityEngine;
 public class Exit : MonoBehaviour
 { 
     public GameManager gameManager;
-    public UIManager uiManager;
+    public UIGameManager uiManager;
     public GameObject door;
 
     public bool areDoorOpen = false;
@@ -14,7 +14,7 @@ public class Exit : MonoBehaviour
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
-        uiManager = FindObjectOfType<UIManager>();
+        uiManager = FindObjectOfType<UIGameManager>();
     }
 
     [ContextMenu("OpenDoor")]

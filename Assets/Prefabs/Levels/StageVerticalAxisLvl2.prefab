@@ -811,7 +811,7 @@ GameObject:
   - component: {fileID: 6497611400876499533}
   m_Layer: 0
   m_Name: StageVerticalAxisLvl2
-  m_TagString: Untagged
+  m_TagString: STAGE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
