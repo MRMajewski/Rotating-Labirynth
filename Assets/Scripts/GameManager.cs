@@ -12,12 +12,15 @@ public class GameManager : MonoBehaviour
     public Stage stage;
     public GameObject levelStage;
 
+
     public ItemsCounter itemsCounter;
 
 
     public Exit exit;
 
     public int levelIndex;
+
+    public CheckPoints[] checkPointsArray;
 
     [Header("Level Settings")]
     public LevelSettings[] levelSettings;
@@ -26,7 +29,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         stage = FindObjectOfType<Stage>();
-      
+
+
 
     }
 
@@ -37,19 +41,35 @@ public class GameManager : MonoBehaviour
         stage.PrepareStage();
         exit = FindObjectOfType<Exit>();
         levelStage = GameObject.FindGameObjectWithTag("STAGE");
+        CountCheckPoints();
+        SetUICounter();
 
         checkPointsGot = 0;
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CountCheckPoints()
     {
-        if(checkPointsGot==checkPointToFinish)
-        {
-            finishGame();
-        }
+        checkPointsArray = FindObjectsOfType<CheckPoints>();
+
+        checkPointToFinish = checkPointsArray.Length;
+        Debug.Log(checkPointToFinish);
     }
+
+    public void SetUICounter()
+    {
+        itemsCounter.checkPointsToFinish = this.checkPointToFinish;
+        itemsCounter.UpdatePointsUI(0);
+    }
+
+    // Update is called once per frame
+    //void Update()
+    //{
+    //    if(checkPointsGot==checkPointToFinish)
+    //    {
+    //        finishGame();
+    //    }
+    //}
 
     private void finishGame()
     {
@@ -73,6 +93,12 @@ public class GameManager : MonoBehaviour
     {
         checkPointsGot = checkPointsGot + points;
         itemsCounter.UpdatePointsUI(checkPointsGot);
+
+        if (checkPointsGot == checkPointToFinish)
+        {
+            finishGame();
+        }
     }
+
 
 }

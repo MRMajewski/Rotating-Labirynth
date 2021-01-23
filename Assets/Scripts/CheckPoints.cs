@@ -29,9 +29,9 @@ public class CheckPoints : MonoBehaviour
         if (IsChecked) return;
         
 
-     //   IsChecked = true;
+        IsChecked = true;
         gameManager.UpdatePoints(1);
-         //   gameManager.checkPointsGot++;
+        
             
             Debug.Log("Działa");
 

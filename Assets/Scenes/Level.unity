@@ -2001,6 +2001,7 @@ MonoBehaviour:
   itemsCounter: {fileID: 372171007}
   exit: {fileID: 0}
   levelIndex: 0
+  checkPointsArray: []
   levelSettings:
   - name: level1
     level: {fileID: 6880195883905251474, guid: c3d1753a2d0fe86428223a3892740b54, type: 3}
