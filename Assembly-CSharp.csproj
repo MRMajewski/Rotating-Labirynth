@@ -102,6 +102,7 @@
     <Compile Include="Assets\Scripts\ItemsCounter.cs" />
     <Compile Include="Assets\Scripts\LevelChoose.cs" />
     <Compile Include="Assets\Scripts\LevelSettings.cs" />
+    <Compile Include="Assets\Scripts\SphereMovementBoundaries.cs" />
     <Compile Include="Assets\Scripts\Stage.cs" />
     <Compile Include="Assets\Scripts\StageRotating.cs" />
     <Compile Include="Assets\Scripts\UIGameManager.cs" />

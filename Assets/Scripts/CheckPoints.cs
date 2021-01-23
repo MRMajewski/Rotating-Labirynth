@@ -6,7 +6,13 @@ public class CheckPoints : MonoBehaviour
 {
 
     public GameManager gameManager;
+
+    private bool IsChecked = false;
     // Start is called before the first frame update
+
+
+    public delegate void ValueChanged();
+    public static event ValueChanged OnValueChanged;
 
     private void Awake()
     {
@@ -20,13 +26,19 @@ public class CheckPoints : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-            gameManager.checkPointsGot++;
+        if (IsChecked) return;
+        
+
+     //   IsChecked = true;
+        gameManager.UpdatePoints(1);
+         //   gameManager.checkPointsGot++;
+            
             Debug.Log("Działa");
 
         LeanTween.scale(gameObject, Vector3.zero, 1f);
         //  LeanTween.rotateY(this.gameObject, 360f, 1f);
         LeanTween.rotateAround(gameObject, Vector3.up, 360f, 1f);
-            Destroy(this.gameObject,1f);
+        Destroy(this.gameObject,2f);
 
 
     }

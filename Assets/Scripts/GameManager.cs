@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public Stage stage;
     public GameObject levelStage;
 
+    public ItemsCounter itemsCounter;
+
 
     public Exit exit;
 
@@ -53,8 +55,6 @@ public class GameManager : MonoBehaviour
     {
         exit.OpenDoor();
 
-
-
     }
 
     public void ExitLevel()
@@ -67,6 +67,12 @@ public class GameManager : MonoBehaviour
     public void PrepareGame(int levelIndex)
     {
         Instantiate(levelSettings[levelIndex].level);
+    }
+
+    public void UpdatePoints(int points)
+    {
+        checkPointsGot = checkPointsGot + points;
+        itemsCounter.UpdatePointsUI(checkPointsGot);
     }
 
 }

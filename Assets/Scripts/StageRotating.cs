@@ -7,7 +7,7 @@ public class StageRotating : MonoBehaviour
 
     public float RotatingSpeed = 1f;
 
-    private float RotatingParameter;
+    public float RotatingParameter;
 
     
     public Transform verticalAxisTransform;
@@ -17,6 +17,20 @@ public class StageRotating : MonoBehaviour
     public float animTime;
     public float cooldownRate = 1f;
     private float coolingDownTime;
+
+    public Rigidbody rigidbody;
+
+
+    private void Awake()
+    {
+        RotatingSpeed = 300f;
+    }
+
+    private void Start()
+    {
+       
+     //   rigidbody = GetComponent<Rigidbody>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -49,10 +63,17 @@ public class StageRotating : MonoBehaviour
 
     }
 
+    void UpdateRotationTest(float rotatingParameter)
+    {
+   //     LeanTween.rotateZ(this.gameObject,
+    }
 
     void UpdateRotation(float tankRotate)
     {
-            transform.Rotate(Vector3.forward * tankRotate * RotatingSpeed);
+        //    transform.Rotate(Vector3.forward * tankRotate * RotatingSpeed);
+        rigidbody.AddTorque(new Vector3(1,1,1) * tankRotate * RotatingSpeed);
+
+        
        // transform.Rotate(Vector3.forward, RotatingParameter);
         
       //  Vector3 newRotation = Quaternion.Euler(0,0,1)
