@@ -700,6 +700,7 @@ MonoBehaviour:
   itemsCounter: {fileID: 372171008}
   gameManager: {fileID: 2002536747}
   checkPointsGot: 0
+  checkPointsToFinish: 0
 --- !u!114 &372171008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1454,8 +1455,8 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: -3.75}
   sphere: {fileID: 1283395496}
   camera: {fileID: 963194227}
-  smoothSpeed: 10
-  smoothSpeedFieldOfView: 1
+  smoothSpeed: 100
+  smoothSpeedFieldOfView: 100
 --- !u!108 &963194230
 Light:
   m_ObjectHideFlags: 0
