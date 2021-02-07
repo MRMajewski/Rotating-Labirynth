@@ -932,6 +932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 478463441}
   - component: {fileID: 478463440}
+  - component: {fileID: 478463442}
   m_Layer: 0
   m_Name: UI Manager Main Menu
   m_TagString: Untagged
@@ -967,6 +968,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &478463442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478463439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469fa0c13198f3545ac6ccde3a6d23ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelPanel: {fileID: 186815793}
+  allLevelsCount: 4
+  levelsButtons:
+  - {fileID: 1335069723}
+  - {fileID: 303053956}
+  - {fileID: 1101385306}
+  - {fileID: 565278261}
+  numberOfActiveButtons: 0
+  levelUnlockedData: {fileID: 600220046}
 --- !u!1 &565278259
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,6 +1220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 600220045}
   - component: {fileID: 600220044}
+  - component: {fileID: 600220046}
   m_Layer: 0
   m_Name: StageManager
   m_TagString: Untagged
@@ -1241,6 +1264,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &600220046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600220043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2049b7a39bd2cdc43b44dfa92dc159ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockedLevels: 1
 --- !u!1 &644949773
 GameObject:
   m_ObjectHideFlags: 0

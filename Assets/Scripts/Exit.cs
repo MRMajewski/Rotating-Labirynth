@@ -10,11 +10,18 @@ public class Exit : MonoBehaviour
 
     public bool areDoorOpen = false;
 
+    public levelUnlockedData levelUnlockedData;
+    public int levelUnlocked;
+
+
+    private bool isLevelComplete = false;
+
 
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
         uiManager = FindObjectOfType<UIGameManager>();
+        levelUnlockedData = FindObjectOfType<levelUnlockedData>();
     }
 
     [ContextMenu("OpenDoor")]
@@ -30,9 +37,17 @@ public class Exit : MonoBehaviour
     {
         if (areDoorOpen)
         {
-            Debug.Log("Przechodzisz do kolejnego levelu");
+            if(!isLevelComplete)
+             {
+                levelUnlockedData.SetUnlockedLevelsNumber(levelUnlocked);
+                isLevelComplete = true;
+            }
+
+            
+            Debug.Log("levelUnlockedData.unlockedLevels");
             gameManager.ExitLevel();
             uiManager.endGame();
+    
         }
          
     }

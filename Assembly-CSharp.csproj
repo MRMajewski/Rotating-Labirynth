@@ -102,12 +102,14 @@
     <Compile Include="Assets\Scripts\ItemsCounter.cs" />
     <Compile Include="Assets\Scripts\LevelChoose.cs" />
     <Compile Include="Assets\Scripts\LevelSettings.cs" />
+    <Compile Include="Assets\Scripts\LevelUnlocking.cs" />
     <Compile Include="Assets\Scripts\SphereMovementBoundaries.cs" />
     <Compile Include="Assets\Scripts\Stage.cs" />
     <Compile Include="Assets\Scripts\StageRotating.cs" />
     <Compile Include="Assets\Scripts\UIGameManager.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\UIManagerMainMenu.cs" />
+    <Compile Include="Assets\Scripts\levelUnlockedData.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
