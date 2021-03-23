@@ -26,12 +26,6 @@ public class StageRotating : MonoBehaviour
         RotatingSpeed = 300f;
     }
 
-    private void Start()
-    {
-       
-     //   rigidbody = GetComponent<Rigidbody>();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -63,29 +57,11 @@ public class StageRotating : MonoBehaviour
 
     }
 
-    void UpdateRotationTest(float rotatingParameter)
-    {
-   //     LeanTween.rotateZ(this.gameObject,
-    }
 
     void UpdateRotation(float tankRotate)
     {
-        //    transform.Rotate(Vector3.forward * tankRotate * RotatingSpeed);
         rigidbody.AddTorque(new Vector3(1,1,1) * tankRotate * RotatingSpeed);
 
-        
-       // transform.Rotate(Vector3.forward, RotatingParameter);
-        
-      //  Vector3 newRotation = Quaternion.Euler(0,0,1)
-      //  transform.rotation = 
-    }
-
-
-    void InvertingStage()
-    {
-        var targetPosition = Quaternion.Euler(180, 0, 0);
-
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetPosition, Time.deltaTime*20f);
     }
 
     IEnumerator InvertingTest(Quaternion newRot,float animSpeed, float animTime)
